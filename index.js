@@ -58,6 +58,4 @@ ${body}
 	res.send('success')
 });
 
-module.exports = async (req, res) => {
-	console.log(Object.keys(req))
-}
+fastify.listen(process.env.PORT || 3000)
