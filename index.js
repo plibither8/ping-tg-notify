@@ -38,7 +38,8 @@ fastify.get('/', async (req, res) => {
 });
 
 fastify.post('/', async (req, res) => {
-	const {ip, body} = req;
+	const {headers} = req;
+	const ip = headers['x-real-ip'] || headers['x-forwarded-for']
 	const ipDetails = await fetch(`http://ip-api.com/json/${ip}?fields=4255257`)
 		.then(res => res.json());
 	await sendToTelegram(
