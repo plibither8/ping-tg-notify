@@ -18,5 +18,5 @@ async function sendToTelegram(message) {
 
 module.exports = async (req, res) => {
 	await sendToTelegram('🎯 Ping test: success!')
-	return 'success'
+	res.end('success')
 }
