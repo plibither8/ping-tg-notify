@@ -1,5 +1,9 @@
 {
 	"version": 2,
+	"env": {
+		"TG_BOT_NAME": "@tg-bots-mihir-ch-bot",
+		"TG_BOT_SECRET": "@tg-bots-secret"
+	},
 	"github": {
 		"enabled": true,
 		"silent": true
